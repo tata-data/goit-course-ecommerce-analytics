@@ -12,3 +12,7 @@ order_items: order_id, product_id – деталі замовлення (foreign
 products: product_id – логічний primary key
 
 Під час попереднього аналізу я перевірила узгодженість цін: total = price * quantity – discount, тому price інтерпретую як ціну за одиницю товару.
+
+
+Схема бази даних
+![ER діаграма e-commerce](image/diagram/er_ecommerce.png)
