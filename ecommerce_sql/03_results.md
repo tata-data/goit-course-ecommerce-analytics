@@ -5,10 +5,27 @@
 
 <img width="469" height="133" alt="image" src="https://github.com/user-attachments/assets/9aa54748-0c24-4ca7-a603-ea36b4392714" />
 
- 
 ## 1.2 Топ за виручкою.
 За кількістю замовлень лідирують категорії Books, Home та Electronics, але за виручкою друга і третя позиції належать Toys та Home, тоді як Electronics випадає з топ 3 за доходом. Це означає що електроніка популярна за кількістю чеків, проте середній чек у цій категорії нижчий ніж в інших. Отже основний внесок у виручку дають книги, іграшки та товари для дому.
 
-<img width="484" height="145" alt="image" src="https://github.com/user-attachments/assets/d23f1a17-b3da-4c7f-997b-525e3cea8aa4" />
+<img width="451" height="132" alt="image" src="https://github.com/user-attachments/assets/9d75ca11-2664-4ee6-9dd3-3da8bc0e2dc7" />
 
-## 1.3 Середінй чек.
+
+# 2. Середні чеки та знижка.
+## 2.1 Середінй чек (AOV - Average Order Value)
+
+<img width="441" height="70" alt="image" src="https://github.com/user-attachments/assets/2adbedbd-b50b-4127-be4c-97b2750198b8" />
+
+## 2.2 Середінй чек (ARPU - Average Revenue Per User)
+
+<img width="401" height="72" alt="image" src="https://github.com/user-attachments/assets/496e0022-b82d-43e6-a184-14ffd3d1512c" />
+
+Середній чек (AOV) ≈ 11 007.
+Середні витрати користувача (ARPU) ≈ 11 007.
+Оскільки в цьому навчальному датасеті майже кожен користувач має лише одне замовлення, AOV і ARPU збігаються. У реальних даних при наявності повторних покупок ці показники розходяться й використовуються для різних рішень (оптимізація чека vs оцінка цінності клієнта).
+
+
+## 2.3 Як знижки впливають на обсяг продажів і виручку по ключових категоріях?
+
+<img width="710" height="145" alt="image" src="https://github.com/user-attachments/assets/95f12468-e279-4abd-9a39-da524f12e727" />
+
