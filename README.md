@@ -15,4 +15,6 @@ products: product_id – логічний primary key
 
 
 Схема бази даних
+
+
 ![ER діаграма e-commerce](image/diagram/er_ecommerce.png)
