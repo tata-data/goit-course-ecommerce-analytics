@@ -37,7 +37,7 @@ create table order_items (
 );
 
 
--- 2. Наповнення з сирої таблиці ecommerce_dataset (та, що умовртована з CSV)
+-- 2. Наповнення з сирої таблиці ecommerce_dataset (та, що умовтована з CSV)
 
 -- users
 insert into users (user_id)
