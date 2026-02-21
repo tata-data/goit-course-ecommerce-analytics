@@ -1,2 +1,7 @@
 # goit-course-ecommerce-analytics
-Цей репозиторій містить навчальний SQL-проєкт, виконаний у межах курсу Data Analytics від GoIT. Дані взято з навчального e-commerce датасету курсу. Мета роботи – попрактикувати нормалізацію даних, побудову схеми бази та exploratory analysis за допомогою SQL і DBeaver на прикладі умовного інтернет-магазину.
+Цей репозиторій містить навчальний SQL-проєкт, виконаний у межах курсу Data Analytics від GoIT. 
+Дані взято з навчального e-commerce датасету курсу. 
+
+Мета роботи – попрактикувати нормалізацію даних, побудову схеми бази та exploratory analysis за допомогою SQL і DBeaver на прикладі умовного інтернет-магазину.
+
+Датасет містить інформацію про замовлення, користувачів і товари: order_id, user_id, order_date, product_id, category, price, quantity, discount, payment_method, delivery_status, country, device, total.
