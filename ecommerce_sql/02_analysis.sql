@@ -17,9 +17,9 @@ ORDER BY orders_count DESC
 
 -- 1.2 Топ за виручкою.
 SELECT
-	p.category
-	,sum(oi.price) AS revenue
-	,ROUND(
+    p.category
+    ,SUM(oi.total) AS revenue
+    ,ROUND(
         100.0 * SUM(oi.total)
         / SUM(SUM(oi.total)) OVER (), 2
     ) AS revenue_share_pct
