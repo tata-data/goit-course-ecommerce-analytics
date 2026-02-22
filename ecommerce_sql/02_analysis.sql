@@ -4,7 +4,7 @@
 -- 1.1 Топ за кількістю транзакцій
 SELECT
 	p.category
-  ,COUNT(DISTINCT oi.order_id) AS orders_count
+    ,COUNT(DISTINCT oi.order_id) AS orders_count
 	,ROUND(
     100.0 * COUNT(DISTINCT oi.order_id)
     / SUM(COUNT(DISTINCT oi.order_id)) OVER (), 2
@@ -177,7 +177,7 @@ ORDER BY number_of_orders DESC
 ;
 
 
--- Повернені/Скасовані товари по категоріям
+-- 5.2 Повернені/Скасовані товари по категоріям
 SELECT
     p.category
     ,o.delivery_status
@@ -201,8 +201,25 @@ ORDER BY
 ;
 
 
+-- 5.  Як змінюється загальна виручка по місяцях + AOV
+WITH monthly AS (
+    SELECT
+        strftime('%Y-%m', o.order_date) AS month
+        ,COUNT(DISTINCT o.order_id) AS orders_count
+        ,SUM(oi.total) AS revenue
+    FROM orders o
+    JOIN order_items oi
+        ON o.order_id = oi.order_id
+    WHERE o.delivery_status = 'Delivered'
+    GROUP BY strftime('%Y-%m', o.order_date)
+)
+SELECT
+	month
+    ,orders_count
+    ,revenue
+    ,ROUND(1.0 * revenue / orders_count, 2) AS aov
+FROM monthly
+ORDER BY month
+;
 
--- 5.2  Як ця частка змінюється по місяцях?
 
-
--- 5.3  Чи залежать скасування/повернення від категорії, країни, девайсу?»
