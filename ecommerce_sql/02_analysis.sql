@@ -201,7 +201,7 @@ ORDER BY
 ;
 
 
--- 5.  Як змінюється загальна виручка по місяцях + AOV
+-- 6.  Як змінюється загальна виручка по місяцях + AOV
 WITH monthly AS (
     SELECT
         strftime('%Y-%m', o.order_date) AS month
