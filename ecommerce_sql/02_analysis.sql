@@ -127,11 +127,35 @@ GROUP BY
 
 
 -- 4. Географія.
-
 -- 4.1 з яких країн найбільше користувачів
+SELECT
+	country
+	,COUNT(DISTINCT user_id) AS number_of_users
+	,ROUND(
+		100.0 * COUNT(DISTINCT user_id)
+		/ SUM(COUNT(DISTINCT user_id)) OVER (), 2
+	) as users_share_pct 
+FROM orders 
+GROUP BY country
+ORDER BY number_of_users DESC
+;
 
-
--- 4.2 з яких країн найбільше грошей
-
-
--- 4.3 порівняти середній чек по країнах (AOV)
+-- 4.2 З яких країн найбільша виручка. Який середній чек.
+SELECT
+    o.country,
+    SUM(oi.total) AS revenue,
+    ROUND(
+        100.0 * SUM(oi.total)
+        / SUM(SUM(oi.total)) OVER (), 2
+    ) AS revenue_share_pct,
+    ROUND(
+        SUM(oi.total) * 1.0 / COUNT(DISTINCT o.order_id),
+        2
+    ) AS aov
+FROM orders o
+JOIN order_items oi
+    ON oi.order_id = o.order_id
+GROUP BY
+    o.country
+ORDER BY
+    revenue DESC;
