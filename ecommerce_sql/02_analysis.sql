@@ -159,3 +159,50 @@ GROUP BY
     o.country
 ORDER BY
     revenue DESC;
+
+
+-- 5. Якість замовлень.
+-- 5.1  Яка частка замовлень у статусах Delivered / Cancelled / Returned / Pending?
+SELECT
+    delivery_status,
+    COUNT(order_id) AS number_of_orders,
+    ROUND(
+        100.0 * COUNT(order_id)
+        / SUM(COUNT(order_id)) OVER (),
+        2
+    ) AS orders_share_pct
+FROM orders
+GROUP BY delivery_status
+ORDER BY number_of_orders DESC
+;
+
+
+-- Повернені/Скасовані товари по категоріям
+SELECT
+    p.category
+    ,o.delivery_status
+    ,COUNT(DISTINCT o.order_id) AS orders_count
+    ,ROUND(
+        100.0 * COUNT(DISTINCT o.order_id)
+        / SUM(COUNT(DISTINCT o.order_id)) OVER (),
+        2
+    ) AS orders_share_pct
+FROM orders o
+JOIN order_items oi 
+    ON oi.order_id = o.order_id
+JOIN products p
+    ON p.product_id = oi.product_id
+WHERE o.delivery_status IN ('Returned', 'Cancelled')
+GROUP BY
+    p.category,
+    o.delivery_status
+ORDER BY
+    orders_count DESC
+;
+
+
+
+-- 5.2  Як ця частка змінюється по місяцях?
+
+
+-- 5.3  Чи залежать скасування/повернення від категорії, країни, девайсу?»
