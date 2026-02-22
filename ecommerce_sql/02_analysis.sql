@@ -51,7 +51,6 @@ INNER JOIN orders o
 	ON o.order_id = oi.order_id 
 ;
 
-
 --  2.3 Як знижки впливають на обсяг продажів?
 WITH discounts AS (
     SELECT
@@ -90,6 +89,35 @@ ORDER BY
     ,discount_type;
 
 
-
-
-  
+-- 3 Хто приносить більше виручки: нові чи повторні клієнти?
+WITH user_orders_numbered AS (
+    SELECT
+        user_id
+        ,order_id
+        ,order_date
+        ,ROW_NUMBER() OVER (
+            PARTITION BY user_id
+            ORDER BY order_date
+        ) AS order_number
+    FROM orders
+),
+customer_type_orders AS (
+    SELECT
+        uon.order_id
+        ,uon.user_id
+        ,uon.order_date
+        ,oi.total,
+        CASE
+            WHEN uon.order_number = 1 THEN 'new'
+            ELSE 'repeat'
+        END AS customer_type
+    FROM user_orders_numbered uon
+    JOIN order_items oi
+        ON oi.order_id = uon.order_id
+)
+SELECT
+    customer_type
+    ,SUM(total) AS revenue
+FROM customer_type_orders
+GROUP BY
+    customer_type;
