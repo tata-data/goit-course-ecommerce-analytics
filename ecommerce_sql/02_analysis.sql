@@ -29,6 +29,7 @@ GROUP BY p.category
 ORDER BY revenue DESC
 ;
 
+
 -- 2. Середні чеки та знижка.
 
 -- 2.1 AOV - Average Order Value
@@ -89,6 +90,7 @@ ORDER BY
     ,discount_type;
 
 
+
 -- 3 Хто приносить більше виручки: нові чи повторні клієнти?
 WITH user_orders_numbered AS (
     SELECT
@@ -121,3 +123,15 @@ SELECT
 FROM customer_type_orders
 GROUP BY
     customer_type;
+
+
+
+-- 4. Географія.
+
+-- 4.1 з яких країн найбільше користувачів
+
+
+-- 4.2 з яких країн найбільше грошей
+
+
+-- 4.3 порівняти середній чек по країнах (AOV)
