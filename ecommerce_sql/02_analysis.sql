@@ -15,6 +15,8 @@ GROUP BY p.category
 ORDER BY orders_count DESC
 ;
 
+
+
 -- 1.2 Топ за виручкою.
 SELECT
     p.category
@@ -30,6 +32,7 @@ ORDER BY revenue DESC
 ;
 
 
+
 -- 2. Середні чеки та знижка.
 
 -- 2.1 AOV - Average Order Value
@@ -41,6 +44,8 @@ SELECT
 FROM order_items
 ;
 
+
+
 -- 2.2 ARPU - Average Revenue Per User
 SELECT
 	ROUND(
@@ -51,6 +56,8 @@ FROM order_items oi
 INNER JOIN orders o
 	ON o.order_id = oi.order_id 
 ;
+
+
 
 --  2.3 Як знижки впливають на обсяг продажів?
 WITH discounts AS (
@@ -140,6 +147,9 @@ GROUP BY country
 ORDER BY number_of_users DESC
 ;
 
+
+
+
 -- 4.2 З яких країн найбільша виручка. Який середній чек.
 SELECT
     o.country,
@@ -161,6 +171,7 @@ ORDER BY
     revenue DESC;
 
 
+
 -- 5. Якість замовлень.
 -- 5.1  Яка частка замовлень у статусах Delivered / Cancelled / Returned / Pending?
 SELECT
@@ -175,6 +186,7 @@ FROM orders
 GROUP BY delivery_status
 ORDER BY number_of_orders DESC
 ;
+
 
 
 -- 5.2 Повернені/Скасовані товари по категоріям
@@ -201,6 +213,7 @@ ORDER BY
 ;
 
 
+
 -- 6.  Як змінюється загальна виручка по місяцях + AOV
 WITH monthly AS (
     SELECT
@@ -221,5 +234,3 @@ SELECT
 FROM monthly
 ORDER BY month
 ;
-
-
