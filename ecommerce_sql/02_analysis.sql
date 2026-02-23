@@ -1,5 +1,4 @@
 -- 1. Продуктова структура
--- Мета:  Визначити найпопулярнішу категорію товарів.
 
 -- 1.1 Топ за кількістю транзакцій
 SELECT
@@ -17,7 +16,7 @@ ORDER BY orders_count DESC
 
 
 
--- 1.2 Топ за виручкою.
+-- 1.2 Топ за виручкою
 SELECT
     p.category
     ,SUM(oi.total) AS revenue
@@ -33,7 +32,7 @@ ORDER BY revenue DESC
 
 
 
--- 2. Середні чеки та знижка.
+-- 2. Середні чеки та знижка
 
 -- 2.1 AOV - Average Order Value
 SELECT
@@ -59,7 +58,7 @@ INNER JOIN orders o
 
 
 
---  2.3 Як знижки впливають на обсяг продажів?
+--  2.3 Як знижки впливають на обсяг продажів
 WITH discounts AS (
     SELECT
         oi.order_id
@@ -98,7 +97,7 @@ ORDER BY
 
 
 
--- 3 Хто приносить більше виручки: нові чи повторні клієнти?
+-- 3 Хто приносить більше виручки: нові чи повторні клієнти
 WITH user_orders_numbered AS (
     SELECT
         user_id
@@ -133,7 +132,7 @@ GROUP BY
 
 
 
--- 4. Географія.
+-- 4. Географія
 -- 4.1 з яких країн найбільше користувачів
 SELECT
 	country
@@ -150,7 +149,7 @@ ORDER BY number_of_users DESC
 
 
 
--- 4.2 З яких країн найбільша виручка. Який середній чек.
+-- 4.2 З яких країн найбільша виручка. Який середній чек
 SELECT
     o.country,
     SUM(oi.total) AS revenue,
@@ -172,8 +171,8 @@ ORDER BY
 
 
 
--- 5. Якість замовлень.
--- 5.1  Яка частка замовлень у статусах Delivered / Cancelled / Returned / Pending?
+-- 5. Якість замовлень
+-- 5.1  Яка частка замовлень у статусах Delivered / Cancelled / Returned / Pending
 SELECT
     delivery_status,
     COUNT(order_id) AS number_of_orders,
