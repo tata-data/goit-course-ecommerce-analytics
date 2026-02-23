@@ -1,39 +1,49 @@
 # goit-data-analytics-projects
 
-## Проєкт 1: ecommerce_sql
+Educational data analytics projects (SQL, Python, BI dashboards) completed during the GoIT Data Analyst course.
 
-SQL-аналітика умовного інтернет-магазину. 
+## Project 1: ecommerce_sql
 
-Мета проєкту: показати, як я будую структуру даних під аналітику і відповідаю на типові питання e-commerce бізнесу.
+SQL analytics of a fictional e-commerce store.
 
-Що в цьому проєкті:
-- Нормалізація «плоского» e-commerce датасету в кілька таблиць (users, orders, order_items, products)
-- ER-діаграма
-- Бізнес-питання про популярні категорії
-- Вплив знижок
-- Повторні замовлення
-- Країни та статуси замовлень
-- Дашборд у Google Sheets
+**Goal:** show how I can prepare data for analysis, answer typical e-commerce business questions and build a simple BI dashboard.
 
-Стек:
-- SQL
-- DBeaver
-- Google Sheets для дашборду
+**What’s inside:**
 
+- Normalization of a “flat” CSV into a relational schema (`users`, `orders`, `order_items`, `products`)
+- ER diagram
+- SQL queries for:
+  - top categories by orders and by revenue
+  - discount impact on sales
+  - order statuses and return rate
+  - revenue by country
+  - monthly dynamics of revenue, orders and AOV
+- E-commerce performance dashboard (Google Looker Studio) based on the SQL results
 
-## Проєкт 2: stackoverflow_python
+**Tech stack:**
 
-Аналіз Stack Overflow Developer Survey у форматі Jupyter Notebook.
+- SQL (SQLite via DBeaver)
+- Google Looker Studio (dashboard)
 
-Мета проєкту: показати, як я проводжу досліджувальний аналіз даних (EDA), комбіную код, графіки й аналітичний текст в одному ноутбуці
+---
 
-Що в цьому проєкті:
-- Завантаження двох таблиць (результати опитування та schema) у Pandas
-- Базова розвідка й аналіз пропусків
-- Географічний аналіз компенсації Python-розробників по країнах (ConvertedCompYearly, середнє/медіана і кількість респондентів)
-- Дослідження залежності зарплати від рівня освіти (EdLevel) та підсумкові висновки з інтерпретацією результатів
+## Project 2: stackoverflow_python
 
-Стек:
+Exploratory data analysis of the Stack Overflow Developer Survey in a Jupyter Notebook.
+
+**Goal:** demonstrate how I work with survey data in Python: cleaning, EDA, visualisation and analytical write-up.
+
+**What’s inside:**
+
+- Loading survey results and schema into Pandas
+- Basic data cleaning and missing values analysis
+- Geographical analysis of Python developers’ compensation:
+  - average / median yearly compensation
+  - number of respondents by country
+- Analysis of compensation vs. education level (EdLevel) with interpretation
+
+**Tech stack:**
+
 - Python, Jupyter Notebook
 - Pandas, NumPy
 - Matplotlib
