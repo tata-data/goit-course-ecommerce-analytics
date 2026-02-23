@@ -18,9 +18,6 @@ products: product_id – логічний primary key
 Всі замовлення мають ненульову знижку, тому я аналізую різні рівні знижок між собою (low / medium / high), а не порівнюю зі знижкою та без.
 Невеликий обсяг даних (600 рядків), тому висновки лише для ілюстрації аналізу на основі синтетичних даних.
 
-Схема бази даних
 
 
-![E-commerce dashboard](ecommerce_sql/dashboard/dashboard.png)
-
-
+![E-commerce dashboard](dashboard/dashboard.png)
