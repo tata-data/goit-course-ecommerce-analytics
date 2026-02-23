@@ -19,5 +19,5 @@ products: product_id – логічний primary key
 Невеликий обсяг даних (600 рядків), тому висновки лише для ілюстрації аналізу на основі синтетичних даних.
 
 
-
+## E-commerce performance dashboard
 ![E-commerce dashboard](dashboard/dashboard.png)
