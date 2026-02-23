@@ -133,7 +133,7 @@ GROUP BY
 
 
 -- 4. Географія
--- 4.1 з яких країн найбільше користувачів
+-- 4.1 З яких країн найбільше користувачів
 SELECT
 	country
 	,COUNT(DISTINCT user_id) AS number_of_users
