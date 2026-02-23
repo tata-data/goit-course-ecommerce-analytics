@@ -26,4 +26,4 @@ products: product_id – логічний primary key
 
 ## E-commerce performance dashboard
 
-![E-commerce dashboard](ecommerce_sql/dashboard/dashboard.png)
+ecommerce_sql/dashboard/dashboard.png
