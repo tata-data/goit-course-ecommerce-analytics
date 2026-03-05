@@ -1,12 +1,12 @@
 # goit-data-analytics-projects
 
-Educational data analytics projects (SQL, Python, BI dashboards) completed during the GoIT Data Analyst course.
+Portfolio projects in SQL and Python, including data modeling, EDA, and a BI dashboard (completed during GoIT Data Analyst training).
 
 ## Project 1: ecommerce_sql
 
-SQL analytics of a fictional e-commerce store.
+SQL analytics of a training e-commerce dataset simulating real order flow.
 
-**Goal:** show how I can prepare data for analysis, answer typical e-commerce business questions and build a simple BI dashboard.
+**Goal:** show how I can prepare data for analysis, answer typical e-commerce business questions and build an executive-style BI dashboard.
 
 **What’s inside:**
 
