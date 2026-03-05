@@ -1,7 +1,7 @@
 # stackoverflow-python-survey-analysis
 
-Educational data analysis project based on the Stack Overflow Developer Survey 2025.  
-This notebook was created as part of the GoIT Data Analyst course.
+Stack Overflow Developer Survey 2025 — Python EDA (Portfolio Project)
+Exploratory data analysis of a real-world survey dataset (49,191 respondents, 170+ columns). Built during my GoIT Data Analytics training.
 
 Data  
 - Stack Overflow Developer Survey 2025 (official annual survey of developers)
@@ -9,7 +9,7 @@ Data
   (stored as ZIP archives in this repo due to file size)
 
 Goal  
-Practice exploratory data analysis in Python on a real-world survey dataset:
+Perform exploratory data analysis (EDA) in Python on a real-world survey dataset and answer focused research questions.
 - learn to work with a wide table (49 191 rows, 170+ columns)
 - handle missing values
 - answer a few focused business/research questions
@@ -81,7 +81,7 @@ Short summary of findings
 
 ## Опис українською
 
-Цей ноутбук – навчальний проєкт у межах курсу GoIT з аналізу даних з використанням Python.  
+EDA-ноутбук на основі Stack Overflow Developer Survey 2025 (49 191 респондент, 170+ колонок). Проєкт виконано під час навчання на GoIT.
 Я працюю з реальним датасетом Stack Overflow Developer Survey 2025 (49 191 респондент, понад 170 колонок).
 
 Мета роботи – попрактикувати exploratory data analysis: подивитися на структуру даних, заповненість анкет, досвід роботи, використання Python, формат роботи (remote), навчання через онлайн-курси, а також компенсацію в розрізі країн та рівнів освіти.
